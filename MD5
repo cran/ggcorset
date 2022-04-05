@@ -1,0 +1,10 @@
+3bead5640837adaf6f1db0430b834147 *DESCRIPTION
+075c5b4535b97d98c1060af78ec9f2e8 *LICENSE
+ba329e6389d0696aa87afdfa35696369 *NAMESPACE
+9753e382e198a937b1f0e8bff825edbd *R/drinkdays.R
+b0ced211fe0e53832a4f1bb270f286e5 *R/gg_corset.R
+90dcb1740c0eeeefaed9dda71965c001 *R/gg_corset_elongated.R
+7203565e8cdf031b0129f2ab67255c27 *data/drinkdays.RData
+026e24a42ca777d27938d48aba91a424 *man/drinkdays.Rd
+7cf4a690d1eeb241cb2fbb4a59e6887b *man/gg_corset.Rd
+a73e50a7f590354d0b06a3fd18a2de5a *man/gg_corset_elongated.Rd
