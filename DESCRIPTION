@@ -1,7 +1,7 @@
 Package: ggcorset
 Type: Package
 Title: The Corset Plot
-Version: 0.4.0
+Version: 0.4.5
 Author: Kyla Belisario
 Maintainer: Kyla Belisario <kyla_belisario@protonmail.com>
 Description: Corset plots are a visualization technique used strictly to visualize repeat measures 
@@ -21,6 +21,6 @@ RoxygenNote: 7.2.2
 Suggests: rmarkdown, knitr, viridis, MetBrewer
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2022-12-11 02:16:01 UTC; kyla
+Packaged: 2022-12-11 20:03:15 UTC; kyla
 Repository: CRAN
-Date/Publication: 2022-12-11 03:30:02 UTC
+Date/Publication: 2022-12-11 22:20:03 UTC
