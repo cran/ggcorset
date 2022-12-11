@@ -37,7 +37,7 @@ plot +
   # Changes the labels of the 2 time points (on the x-axis)
   scale_x_discrete(labels = c("Pre","Post")) +
   # Makes the legend lines thicker
-  guides(colour = guide_legend(override.aes = list(size = 3)))
+  guides(colour = guide_legend(override.aes = list(linewidth = 3)))
 
 
 ## ---- fig.show='hide'---------------------------------------------------------
@@ -76,20 +76,34 @@ plot +
   # Changes the labels of the 2 time points (on the x-axis)
   scale_x_discrete(labels = c("Pre","Post")) +
   # Makes the legend lines thicker
-  guides(colour = guide_legend(override.aes = list(size = 3)))
+  guides(colour = guide_legend(override.aes = list(linewidth = 3)))
 
 
 ## ----out.width=650------------------------------------------------------------
 
 gg_corset(drinkdays, y_var1 = "time1", y_var2 = "time2",
-          c_var = "direction", group = "id", faceted = T) + 
+          c_var = "direction", group = "id", faceted = T, facet_design = "group") + 
+  theme_ggcorset() +  
+  scale_colour_manual("Direction of Change",
+                      values = MetBrewer::met.brewer("Demuth",3, direction = -1))  +
+  scale_fill_manual(values = MetBrewer::met.brewer("Demuth",3, direction = -1))  +
+  ggtitle("Change in Drinking Days") + 
+  ylab("Number of Drinking Days per Week") + xlab("") +
+  scale_x_discrete(labels = c("Pre","Post")) +
+  guides(colour = guide_legend(override.aes = list(linewidth = 3)))
+
+
+## ----out.width=650------------------------------------------------------------
+
+gg_corset(drinkdays, y_var1 = "time1", y_var2 = "time2",
+          c_var = "direction", group = "id", faceted = T, facet_design = "line") + 
   theme_ggcorset() +  
   scale_colour_manual("Direction of Change",
                       values = MetBrewer::met.brewer("Demuth",3))  +
   ggtitle("Change in Drinking Days") + 
   ylab("Number of Drinking Days per Week") + xlab("") +
   scale_x_discrete(labels = c("Pre","Post")) +
-  guides(colour = guide_legend(override.aes = list(size = 3)))
+  guides(colour = guide_legend(override.aes = list(linewidth = 3)))
 
 
 ## ---- out.width=650-----------------------------------------------------------
@@ -124,7 +138,7 @@ ggtitle("Change in Drinking Days by Age Group",
   ylab("Number of Drinking Days per Week") +
   xlab("") +
   scale_x_discrete(labels = c("Pre","Post")) +
-  guides(colour = guide_legend(override.aes = list(size = 3)))
+  guides(colour = guide_legend(override.aes = list(linewidth = 3)))
 
 
 ## ---- echo=FALSE, out.width=650-----------------------------------------------
@@ -137,7 +151,7 @@ drinkdays$class <- factor(drinkdays$class,levels = c(1,2,3),
                           labels = c("Class 1 (25.7%)","Class 2 (31.0%)", "Class 3 (43.3%)"))
 
 gg_corset(drinkdays, y_var1 = "time1", y_var2 = "time2", c_var = "class",
-          group = "id", faceted = T, eyelets = T) + theme_ggcorset() +
+          group = "id", faceted = T, facet_design = "line", eyelets = T) + theme_ggcorset() +
   xlab("") +  scale_colour_manual("",
                                   values = MetBrewer::met.brewer("Kandinsky",3, direction = 1)) +
   ggtitle("Change in Drinking Days by Latent Class",
